@@ -1,0 +1,10 @@
+default:
+
+    suites:
+
+        backend_routing:
+            paths: [ ./tests/Context/Backend/Routing/Feature ]
+            contexts:
+                - Behat\MinkExtension\Context\MinkContext
+                - App\Tests\Context\Backend\Routing\Context\RoutingContext
+                - App\Tests\Context\Common\Context\CommonContext

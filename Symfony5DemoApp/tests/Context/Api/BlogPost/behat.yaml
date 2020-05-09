@@ -1,0 +1,12 @@
+default:
+
+    suites:
+
+        blog_post_api:
+            paths: [ ./tests/Context/Api/BlogPost/Feature ]
+            contexts:
+                - Behat\MinkExtension\Context\MinkContext
+                - Behatch\Context\RestContext
+                - Behatch\Context\JsonContext
+                - App\Tests\Context\Api\BlogPost\Context\BlogPostContext
+                - App\Tests\Context\Common\Context\CommonContext

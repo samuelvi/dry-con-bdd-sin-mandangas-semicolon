@@ -1,0 +1,52 @@
+imports:
+    - tests/Context/Frontend/Routing/behat.yaml
+    - tests/Context/Backend/Routing/behat.yaml
+    - tests/Context/Api/BlogPost/behat.yaml
+
+default:
+
+    extensions:
+
+        DMore\ChromeExtension\Behat\ServiceContainer\ChromeExtension: ~
+   
+
+        Chekote\BehatRetryExtension:
+            timeout: 10
+            strictKeywords: false
+
+        Behatch\Extension: ~
+
+        FriendsOfBehat\SymfonyExtension:
+
+            bootstrap: "config/bootstrap.php"
+            kernel:
+                class: App\Kernel
+                environment: test
+                debug: true
+
+        Behat\MinkExtension:
+
+            default_session: goutte
+            javascript_session: selenium2
+            # javascript_session: chrome
+
+            sessions:
+                chrome:
+                    chrome:
+                        api_url: "http://localhost:9222"
+                        download_behavior: allow
+                        download_path: /download
+                        validate_certificate: false
+
+
+
+                symfony:
+                    symfony: ~
+                goutte:
+                    goutte: ~
+                selenium2:
+                    selenium2:
+                        wd_host: "http://localhost:4444/wd/hub"
+                        capabilities: { "browserName": "chrome", "browser": "chrome", "version": "73", 'chrome': {'switches':['--no-sandbox', '--headless']}}
+
+            browser_name: "chrome"

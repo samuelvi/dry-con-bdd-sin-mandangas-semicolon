@@ -1,0 +1,12 @@
+default:
+
+    suites:
+
+        frontend_routing:
+            paths: [ ./tests/Context/Frontend/Routing/Feature ]
+            contexts:
+                - Behat\MinkExtension\Context\MinkContext
+                - App\Tests\Context\Frontend\Routing\Context\RoutingContext
+                - App\Tests\Context\Common\Context\CommonContext
+                - behatch:context:debug:
+                     screenshotDir: 'var/log/test/screenshots/'
