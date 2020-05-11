@@ -147,9 +147,9 @@ class FeatureContext implements Context
 
         // OPCION B:
         $js = "
-        var element = document.querySelector('#mp-topbanner a');
-        var event = new MouseEvent('mouseover', {'view': window,'bubbles': true,'cancelable': true});
-        element.dispatchEvent(event);
+            var element = document.querySelector('#mp-topbanner a');
+            var event = new MouseEvent('mouseover', {'view': window,'bubbles': true,'cancelable': true});
+            element.dispatchEvent(event);
         ";
 
         $this->session->executeScript($js);
@@ -160,8 +160,9 @@ class FeatureContext implements Context
         // MALA PRAXIS, USAR "spins" en su lugar
         // sleep(3);
 
+        // Atención: A veces falla por la "m" de multilingual.
         $this->spins(function () {
-            return $this->session->getPage()->hasContent('is a Multilingual');
+            return $this->session->getPage()->hasContent('is a multilingual');
         });
     }
 

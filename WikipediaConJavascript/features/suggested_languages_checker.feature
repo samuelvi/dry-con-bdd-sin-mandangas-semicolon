@@ -1,4 +1,7 @@
+# ./vendor/behat/behat/bin/behat --tags=SUGGESTED_LANGUAGES
+@SUGGESTED_LANGUAGES
 Feature: Wikipedia suggested languages
+
 
  # ./vendor/behat/behat/bin/behat --tags=EXPLANATION
   @EXPLANATION
