@@ -1,6 +1,6 @@
 #  ./vendor/behat/behat/bin/behat --config=tests/Context/behat.yaml --tags=frontend --tags=routing_01
 
-# Curiosidad: Si usamos el driver de symfony, falla, hace una resolución vía rutas, no curl
+# Curiosidad: Podemos lanzar el test si usamos el driver de Symfony sin levantar el server php. Tira del routing de Symfony
 # Goutte si que hace peticiones web vía Guzzle (curl por defecto)
 #
 # Mala praxis: exponer url

@@ -2,6 +2,8 @@
 @SUGGESTED_LANGUAGES
 Feature: Wikipedia suggested languages
 
+ # EXPLANATION: vemos 2 maneras de testear existencia elementos con Javascript
+ # LANGUAGE_SETTINGS: Mala praxis usar wait N seconds concretos, mejor usar spins.
 
  # ./vendor/behat/behat/bin/behat --tags=EXPLANATION
   @EXPLANATION
@@ -17,7 +19,7 @@ Feature: Wikipedia suggested languages
     When I visit wikipedia homepage in english
     And  I should not see "Language settings"
     And  I click on Language Settings
-    And  I wait 2 seconds
-    And  I take a screenshot
+#    And  I wait 2 seconds
+#    And  I take a screenshot
     And  I should see a popover with the text "Language settings"
 

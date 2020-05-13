@@ -1,11 +1,13 @@
 Feature: Calculator
   In order to calculate
   As anonymous user
-  I should be able to add and substract
+  I should be able to sum two numbers and calculate the square root of a number
 
  # Given => A (Arrange/Preparar)
  # When  => A (Act/Actuar)
  # Then  => A (Assert/Afirmar)
+
+ # Ojo principio SOLID, mejor crear 2 .feature, creado 1 por centrarnos en el ejemplo
 
   Scenario: Perform the addition of two numbers
     Given A standard calculator

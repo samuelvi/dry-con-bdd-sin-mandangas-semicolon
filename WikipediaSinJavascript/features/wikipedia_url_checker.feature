@@ -1,6 +1,10 @@
+
 Feature: Being able to navigate through wikipedia website
 
-  Scenario: Check Behat wiki home pagre in spanish is valid
+  # Buena práctica no exponer urls en el test
+  # Podemos usar los Hooks (BeforeScenario)
+
+  Scenario: Check Behat wiki home page in spanish is valid
     When I visit the wikipedia homepage in spanish
     Then I should see "Bienvenidos a Wikipedia,"
 

@@ -15,20 +15,20 @@ class FeatureContext implements Context
     /** @var Session */
     private $session;
 
-//    /**
-//     * @BeforeScenario
-//     */
-//   public function initializeScenario()
-//    {
-//        $this->initializeSession();
-//    }
+    /**
+     * @BeforeScenario
+     */
+   public function initializeScenario()
+    {
+        $this->initializeSession();
+    }
 
     /**
      * @When /^I visit the wikipedia homepage in spanish$/
      */
     public function visitWikiInSpanish()
     {
-        $this->initializeSession();
+//        $this->initializeSession();
         $this->session->visit("https://es.wikipedia.org");
     }
 
@@ -37,7 +37,7 @@ class FeatureContext implements Context
      */
     public function visitWikiInEnglish()
     {
-        $this->initializeSession();
+//        $this->initializeSession();
         $this->session->visit("https://en.wikipedia.org");
     }
 

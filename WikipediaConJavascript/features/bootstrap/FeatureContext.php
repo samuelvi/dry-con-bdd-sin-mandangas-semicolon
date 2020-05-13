@@ -129,6 +129,10 @@ class FeatureContext implements Context
      */
     public function iShouldSeeAPopoverWithTheText($text)
     {
+        $this->spins(function() use ($text) {
+            return $this->session->getPage()->hasContent($text);
+        });
+
         $hasContent = $this->session->getPage()->hasContent($text);
         Assert::assertTrue($hasContent);
     }
@@ -145,22 +149,24 @@ class FeatureContext implements Context
 //        } catch (\Exception $e) {
 //        }
 
+
         // OPCION B:
         $js = "
             var element = document.querySelector('#mp-topbanner a');
             var event = new MouseEvent('mouseover', {'view': window,'bubbles': true,'cancelable': true});
             element.dispatchEvent(event);
         ";
-
-        $this->session->executeScript($js);
+         $this->session->executeScript($js);
 
         // EN EL PANTALLAZO SE APRECIA CÓMO EL POPOVER TODAVÍA NO ES VISIBLE:
         // $this->iTakeAScreenshot('mouseover');
 
         // MALA PRAXIS, USAR "spins" en su lugar
         // sleep(3);
+        // EN EL PANTALLAZO SE APRECIA QUE YA ES VISIBLE
+        // $this->iTakeAScreenshot('mouseover');
 
-        // Atención: A veces falla por la "m" de multilingual.
+        // Atención: A veces falla por la "m" de multilingual. Puede que esté en mayúsculas o minúsculas
         $this->spins(function () {
             return $this->session->getPage()->hasContent('is a multilingual');
         });
